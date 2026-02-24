@@ -2,6 +2,68 @@
 
 Un sistema completo de gestión de productos con autenticación de usuarios, categorías dinámicas, carga de imágenes y administración de inventario. Construido con **CodeIgniter 4**, **AdminLTE**, **Bootstrap 4** y **DataTables**.
 
+## ⏱️ Estadísticas de Desarrollo
+
+| Métrica | Valor |
+|---------|-------|
+| **Fecha de Inicio** | 23 de Febrero, 2026 |
+| **Fecha de Finalización** | 23 de Febrero, 2026 |
+| **Tiempo Total de Desarrollo** | ~4 horas |
+| **Iteraciones (Prompts)** | 7 principales |
+| **Características Implementadas** | 12+ |
+| **Archivos Creados/Modificados** | 20+ |
+| **Líneas de Código** | ~2,500+ |
+
+### 📊 Desglose de Tiempo por Característica
+
+- **Instalación y Configuración de CI4** - 20 min
+- **Autenticación de Usuarios (Registro/Login)** - 30 min
+- **Integración AdminLTE Dashboard** - 25 min
+- **CRUD de Productos** - 45 min
+- **Carga y Previsualización de Imágenes** - 35 min
+- **CRUD Dinámico de Categorías** - 40 min
+- **URL Rewriting y Seguridad** - 15 min
+- **Documentación y GitHub** - 30 min
+
+**Productividad:** ~625 líneas de código por hora con asistencia de IA
+
+## 📷 Captura de Pantallas
+
+### Autenticación
+- **Login**
+  ```
+  ![Login View](./public/screenshots/01-login.png)
+  ```
+  
+- **Registro**
+  ```
+  ![Register View](./public/screenshots/02-register.png)
+  ```
+
+### Gestión de Productos
+- **Listado de Productos - DataTable**
+  ```
+  ![Products List](./public/screenshots/03-products.png)
+  ```
+  
+- **Modal de Crear/Editar Producto**
+  ```
+  ![Product Modal](./public/screenshots/05-product-modal.png)
+  ```
+  
+- **Modal de Gestión de Categorías**
+  ```
+  ![Categories Modal](./public/screenshots/04-categories-modal.png)
+  ```
+
+### Dashboard
+- **Panel Principal**
+  ```
+  ![Dashboard](./public/screenshots/06-dashboard.png)
+  ```
+
+> **📝 Nota:** Para ver las capturas de pantalla reales, debes capturar las vistas del sistema. Consulta [./public/screenshots/README.md](./public/screenshots/README.md) para instrucciones detalladas sobre cómo capturar y agregar las imágenes.
+
 ## 🎯 Características Principales
 
 ### 👤 Autenticación de Usuarios
@@ -310,6 +372,86 @@ Este proyecto está bajo la licencia MIT. Ver `LICENSE` para más detalles.
 ## 📞 Soporte
 
 Para reportar bugs o solicitar features, abre un issue en el repositorio.
+
+## 🤖 Prompts Utilizados en el Desarrollo
+
+Este proyecto fue desarrollado utilizando prompts de IA para guiar la implementación de característica. A continuación se muestran los prompts utilizados (con semántica y gramática corregidas):
+
+### 1. Filtrado de Productos por Usuario
+**Prompt Original:**
+> "Disculpa, se me olvidó solicitarte que los productos que se muestren solamente sean los del usuario que registró esos productos"
+
+**Resultado:** Implementación de filtrado de productos basado en `user_id`. Ahora cada usuario solo ve y puede gestionar sus propios productos.
+
+---
+
+### 2. Renderización de Imágenes en DataTable y Modal
+**Prompt Original:**
+> "Ya vienen los rusos, por ti Copilot, ayúdame renderizando la imagen del producto en el DataTable en el campo imagen, y en la ventana modal que se renderice la imagen cuando se carga la ventana"
+
+**Resultado:** 
+- Imágenes en miniatura (60x60px) en el DataTable
+- Previsualización en tiempo real en el modal (250x250px)
+- Carga automática de imagen actual al editar producto
+
+---
+
+### 3. URLs Limpias sin `index.php`
+**Prompt Original:**
+> "¿Es posible ocultar `index.php` de las solicitudes sin afectar el funcionamiento actual y poner en riesgo la seguridad del sitio?"
+
+**Resultado:** Configuración de URL rewriting con `.htaccess` y actualización de `App.php` para generar URLs limpias y seguras.
+
+---
+
+### 4. Auto-selección de Categoría Creada
+**Prompt Original:**
+> "Good job baby, excelente implementación, solo falta agregar automáticamente en el select la categoría creada, ¿se puede?"
+
+**Resultado:** Después de crear una categoría, se auto-selecciona automáticamente en el dropdown para facilitar su asignación al producto.
+
+---
+
+### 5. CRUD Dinámico de Categorías
+**Prompt Original:**
+> "Excelente implementación, crea un flujo CRUD para registrar nuevas categorías de productos para hacer dinámico el flujo de registro de categorías. Activa un enlace de las categorías de los productos en el DataTable que abra una modal y muestre las categorías del producto y que puedas agregar nuevas categorías en el modal que se refleje automáticamente para seleccionar la nueva categoría"
+
+**Resultado:**
+- Modal dedicada para gestionar categorías de cada producto
+- Crear nuevas categorías sobre la marcha sin salir del modal
+- Agregar/remover categorías del producto
+- Nuevo controlador `Category.php` con métodos AJAX
+- Auto-actualización del dropdown de categorías
+
+---
+
+### 6. Documentación y Publicación en GitHub
+**Prompt Original:**
+> "Te mando un besito, me estoy enamorando, crea la documentación del sistema en un README, posteriormente conéctate a mi GitHub y pushea el proyecto en un nuevo repositorio llamado ci4withia"
+
+**Resultado:**
+- README completo con documentación detallada
+- Inicialización de repositorio git
+- Commit inicial del proyecto
+- Instrucciones para publicar en GitHub
+
+---
+
+### 7. Inclusión de Prompts en la Documentación
+**Prompt Original:**
+> "Excelente README, ¿es posible agregar los prompts que usamos en este proyecto en el README? Por favor, ¡si se puede realizar! Verifica la semántica y gramática de los prompts utilizados"
+
+**Resultado:** Sección actual que documenta todos los prompts utilizados con correcciones gramaticales y semánticas, demostrando el flujo iterativo de desarrollo con IA.
+
+---
+
+## 💡 Aprendizajes Clave
+
+Este proyecto demuestra cómo:
+- **Prompts iterativos** pueden guiar el desarrollo de caractéristicas complejas
+- **La IA y el desarrollador en colaboración** pueden crear soluciones robustas
+- **La documentación clara de prompts** facilita la reproducibilidad y comprensión del proyecto
+- **Las correcciones gramaticales en prompts** mejoran la precisión en la implementación
 
 ---
 
